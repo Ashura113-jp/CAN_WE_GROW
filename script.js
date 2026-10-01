@@ -678,8 +678,13 @@ function applyLanguage(language) {
 const promptElement = document.querySelector("#joy-prompt");
 const promptCount = document.querySelector("#prompt-count");
 const generateButton = document.querySelector("#generate-button");
+const promptStage = document.querySelector(".prompt-stage");
 let previousPrompt = -1;
 let promptsShown = 0;
+
+promptStage.addEventListener("animationend", (event) => {
+  if (event.target === promptElement) promptStage.classList.remove("is-revealing");
+});
 
 generateButton.addEventListener("click", () => {
   let index = Math.floor(Math.random() * prompts.length);
@@ -690,6 +695,9 @@ generateButton.addEventListener("click", () => {
   promptsShown += 1;
   promptElement.textContent = promptLists[currentLanguage][index];
   promptCount.textContent = translate("joy.count", { n: promptsShown });
+  promptStage.classList.remove("is-revealing");
+  void promptStage.offsetWidth;
+  promptStage.classList.add("is-revealing");
 });
 
 const gameButton = document.querySelector("#game-toggle");
