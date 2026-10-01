@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fffaf2">
+    <meta name="description" content="A tiny corner of the internet for a little fun, a small reset, and a moment of joy.">
+    <title>Little Joy Lab — a little fun, just because</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the fun</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Little Joy Lab home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>little joy <strong>lab</strong></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#joy">Get a tiny joy</a>
+        <a href="#play">Play a game</a>
+      </nav>
+      <a class="header-note" href="#joy"><span aria-hidden="true">✦</span> Your tiny break starts here</a>
+    </header>
+
+    <main id="main">
+      <section class="hero section-wrap" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A little corner of happy</p>
+          <h1 id="hero-title">A little fun,<br>just <span>because.</span></h1>
+          <p class="hero-description">No big plans. No perfect mood required. Just tiny, lovely things to make this moment a little brighter.</p>
+          <a class="button button-primary" href="#joy">Find a little joy <span aria-hidden="true">↘</span></a>
+          <p class="gentle-note"><span aria-hidden="true">♡</span> Take what you need. Stay as long as you like.</p>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a happy sun surrounded by stars and flowers">
+          <div class="sun-rays" aria-hidden="true"></div>
+          <div class="sun-face" aria-hidden="true"><span class="sun-eye"></span><span class="sun-eye"></span><span class="sun-smile"></span></div>
+          <span class="art-star star-one" aria-hidden="true">✦</span>
+          <span class="art-star star-two" aria-hidden="true">✧</span>
+          <span class="art-star star-three" aria-hidden="true">✦</span>
+          <span class="art-flower flower-one" aria-hidden="true">✿</span>
+          <span class="art-flower flower-two" aria-hidden="true">✿</span>
+          <span class="art-caption">a good day<br>to be here</span>
+        </div>
+        <div class="hero-bottom" aria-hidden="true"><span>small joys count, too</span><span>↓</span><span>scroll a little</span></div>
+      </section>
+
+      <section class="joy-section section-wrap" id="joy" aria-labelledby="joy-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> The tiny joy generator</p>
+          <h2 id="joy-title">A little prompt.<br><span>A little lift.</span></h2>
+          <p>Consider this your permission slip to pause, play, and do one small thing just for you.</p>
+        </div>
+        <div class="joy-card">
+          <div class="card-topline"><span class="card-label"><span aria-hidden="true">✳</span> YOUR MOMENT OF JOY</span><span class="card-counter" id="prompt-count">A fresh little idea</span></div>
+          <div class="prompt-stage" aria-live="polite" aria-atomic="true">
+            <span class="prompt-spark" aria-hidden="true">✧</span>
+            <p id="joy-prompt">Tap the button and see what your day has in store.</p>
+            <span class="prompt-spark prompt-spark-bottom" aria-hidden="true">✦</span>
+          </div>
+          <div class="card-actions">
+            <button class="button button-primary" id="generate-button" type="button"><span aria-hidden="true">✦</span> Give me a tiny joy</button>
+            <p class="card-footnote"><span aria-hidden="true">☼</span> No wrong way to do it.</p>
+          </div>
+        </div>
+        <div class="joy-aside" aria-hidden="true"><span class="aside-doodle">〰</span> made for your<br>right now</div>
+      </section>
+
+      <section class="play-section" id="play" aria-labelledby="play-title">
+        <div class="play-inner section-wrap">
+          <div class="play-intro">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> A tiny game break</p>
+            <h2 id="play-title">Pop some<br><span>bubbles.</span></h2>
+            <p>A tiny game with absolutely no stakes. Pop as many bubbles as you can before the timer runs out.</p>
+            <div class="game-stats" aria-label="Game status">
+              <div class="stat"><span class="stat-label">SCORE</span><span class="stat-value" id="score" aria-live="polite">00</span></div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="stat"><span class="stat-label">TIME</span><span class="stat-value" id="time-left" aria-live="off">30<span class="stat-unit">s</span></span></div>
+            </div>
+            <button class="button button-dark" id="game-toggle" type="button"><span aria-hidden="true">▶</span> Start popping</button>
+            <p class="game-hint" id="game-message" aria-live="polite">Ready when you are. Pick any bubble to pop!</p>
+          </div>
+          <div class="game-panel">
+            <div class="game-panel-top"><span><span class="live-dot" aria-hidden="true"></span> BUBBLE PLAYGROUND</span><span id="game-state">ON PAUSE</span></div>
+            <div class="bubble-field" id="bubble-field" aria-label="Bubble popping game">
+              <button class="bubble bubble-pink" type="button" aria-label="Bubble 1" disabled><span></span></button>
+              <button class="bubble bubble-yellow" type="button" aria-label="Bubble 2" disabled><span></span></button>
+              <button class="bubble bubble-blue" type="button" aria-label="Bubble 3" disabled><span></span></button>
+              <button class="bubble bubble-purple" type="button" aria-label="Bubble 4" disabled><span></span></button>
+              <button class="bubble bubble-green" type="button" aria-label="Bubble 5" disabled><span></span></button>
+              <button class="bubble bubble-orange" type="button" aria-label="Bubble 6" disabled><span></span></button>
+              <button class="bubble bubble-blue" type="button" aria-label="Bubble 7" disabled><span></span></button>
+              <button class="bubble bubble-pink" type="button" aria-label="Bubble 8" disabled><span></span></button>
+              <button class="bubble bubble-yellow" type="button" aria-label="Bubble 9" disabled><span></span></button>
+              <button class="bubble bubble-green" type="button" aria-label="Bubble 10" disabled><span></span></button>
+              <button class="bubble bubble-orange" type="button" aria-label="Bubble 11" disabled><span></span></button>
+              <button class="bubble bubble-purple" type="button" aria-label="Bubble 12" disabled><span></span></button>
+              <div class="game-overlay" id="game-overlay"><span class="overlay-icon" aria-hidden="true">✿</span><span>Ready for a little play?</span></div>
+              <div class="pop-feedback" id="pop-feedback" aria-hidden="true">+1</div>
+            </div>
+            <div class="game-panel-bottom"><span>CLICK OR TAP TO POP</span><span aria-hidden="true">✦ &nbsp; ✦ &nbsp; ✦</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing section-wrap" aria-label="A little reminder">
+        <span class="closing-flower" aria-hidden="true">✿</span>
+        <p>Whatever your day looks like,<br><span>you deserve a little joy in it.</span></p>
+        <a href="#top" aria-label="Back to top">Back to the sunshine <span aria-hidden="true">↑</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">✳</span><span>little joy <strong>lab</strong></span></a>
+      <p>A small reminder that the little things are lovely.</p>
+      <span class="footer-heart">made with <span aria-label="love">♥</span> for you</span>
+    </footer>
+  </body>
+</html>
