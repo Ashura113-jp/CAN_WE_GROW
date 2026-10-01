@@ -22,6 +22,19 @@ a { color: inherit; }
 button:focus-visible, a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
 .skip-link { position: fixed; z-index: 20; top: 12px; left: 12px; padding: 12px 18px; transform: translateY(-150%); border-radius: 99px; color: white; background: var(--green-dark); }
 .skip-link:focus { transform: translateY(0); }
+.ambient-playground { position: fixed; z-index: 0; inset: 0; overflow: hidden; opacity: .18; pointer-events: none; user-select: none; }
+.ambient-art { display: block; width: 100%; height: 100%; }
+.ambient-art-mobile { display: none; }
+.ambient-cloud { transform-box: fill-box; transform-origin: center; animation: cloud-drift 42s ease-in-out infinite alternate; }
+.ambient-cloud-b { animation-duration: 54s; animation-delay: -25s; }
+.ambient-butterfly { transform-box: fill-box; transform-origin: center; animation: butterfly-glide 15s ease-in-out infinite; }
+.ambient-butterfly-b { animation-duration: 19s; animation-delay: -11s; }
+.ambient-friends { transform-box: fill-box; transform-origin: center bottom; animation: friendly-nod 7s ease-in-out infinite; }
+.ambient-musician { transform-box: fill-box; transform-origin: center bottom; animation: musician-sway 8s ease-in-out infinite; }
+.ambient-cat { transform-box: fill-box; transform-origin: center; animation: cat-stroll 12s ease-in-out infinite alternate; }
+.ambient-dog { transform-box: fill-box; transform-origin: center bottom; animation: friendly-nod 6s ease-in-out -2s infinite; }
+.ambient-bird { transform-box: fill-box; transform-origin: center; animation: bird-bob 5.5s ease-in-out infinite; }
+.site-header, #main, .site-footer { position: relative; z-index: 1; }
 
 .site-header { min-height: 78px; padding: 10px max(6.5vw, calc((100vw - 1160px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid rgba(66, 75, 57, .08); background: rgba(255, 250, 242, .92); }
 .brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; font-size: 17px; letter-spacing: -.5px; font-weight: 500; white-space: nowrap; }
@@ -272,7 +285,7 @@ h1 { margin: 0; font-size: clamp(55px, 6.2vw, 82px); line-height: 1.03; }
 .prompt-spark { color: #b57b12; animation: sparkle 3.8s ease-in-out infinite; }
 .prompt-spark-bottom { color: #3f704f; animation-delay: -1.9s; }
 .prompt-stage.is-revealing p { animation: prompt-reveal .42s cubic-bezier(.2, .75, .3, 1); }
-.mood-games-section { background: linear-gradient(180deg, #fff2df, #f9eee6 46%, #f2edf8); }
+.mood-games-section { background: linear-gradient(180deg, rgba(255, 242, 223, .9), rgba(249, 238, 230, .9) 46%, rgba(242, 237, 248, .9)); }
 .mood-filter { border-color: #d9c9ab; color: #46554a; background: rgba(255, 253, 249, .9); transition: background .16s ease, color .16s ease, border-color .16s ease, transform .16s ease, box-shadow .16s ease; }
 .mood-filter:hover { transform: translateY(-2px); border-color: #3f704f; box-shadow: 0 4px 10px rgba(44, 80, 57, .12); }
 .mood-filter.is-selected { border-color: #2c5039; background: #2c5039; }
@@ -297,7 +310,7 @@ h1 { margin: 0; font-size: clamp(55px, 6.2vw, 82px); line-height: 1.03; }
 .mini-action:active, .button-dark:active, .mood-filter:active { transform: scale(.97); }
 .color-choice, .memory-tile, .echo-pad, .maze-cell, .maze-controls button, .cloud-choice, .odd-tile, .pattern-choice { transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease, border-color .16s ease; }
 .memory-tile:hover:not(:disabled), .echo-pad:hover:not(:disabled), .maze-controls button:hover, .odd-tile:hover, .pattern-choice:hover, .color-choice:hover, .cloud-choice:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 5px 12px rgba(59, 66, 51, .15); }
-.play-section { background: linear-gradient(135deg, #e5f2e4, #e9f1f9 54%, #f5eafa); }
+.play-section { background: linear-gradient(135deg, rgba(229, 242, 228, .9), rgba(233, 241, 249, .9) 54%, rgba(245, 234, 250, .9)); }
 .game-panel { border-color: #c4d9c1; background: rgba(255, 254, 250, .94); }
 .live-dot { background: #bd5147; }
 .game-overlay { color: #48584a; background: rgba(255, 253, 249, .88); }
@@ -326,6 +339,9 @@ h1 { margin: 0; font-size: clamp(55px, 6.2vw, 82px); line-height: 1.03; }
 @keyframes rabbit-hop { 0%, 82%, 100% { translate: 0 0; } 88% { translate: 0 -12px; } 94% { translate: 0 0; } }
 @keyframes butterfly-glide { 0%, 100% { translate: 0 0; rotate: -5deg; } 25% { translate: 9px -8px; rotate: 8deg; } 50% { translate: 17px -2px; rotate: -3deg; } 75% { translate: 8px -11px; rotate: 7deg; } }
 @keyframes bird-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -4px; } }
+@keyframes friendly-nod { 0%, 100% { translate: 0 0; } 50% { translate: 0 -2px; } }
+@keyframes musician-sway { 0%, 100% { rotate: 0deg; } 50% { rotate: 1.5deg; } }
+@keyframes cat-stroll { from { translate: -4px 0; } to { translate: 5px 0; } }
 
 @media (min-width: 1400px) { .hero { min-height: 680px; } }
 @media (max-width: 800px) {
@@ -351,6 +367,9 @@ h1 { margin: 0; font-size: clamp(55px, 6.2vw, 82px); line-height: 1.03; }
   .scene-cloud-one { animation-duration: 48s; }
   .scene-butterfly-one { animation-duration: 14s; }
   .scene-rabbit { animation-duration: 7.5s; }
+  .ambient-playground { opacity: .13; }
+  .ambient-art { display: none; }
+  .ambient-art-mobile { display: block; }
   .site-header { min-height: 65px; padding: 8px 5%; gap: 8px; }
   .site-header nav { order: 3; width: 100%; justify-content: center; }
   .brand { font-size: 15px; }
