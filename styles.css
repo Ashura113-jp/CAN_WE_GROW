@@ -77,6 +77,17 @@ h1 { margin: 0; font-size: clamp(55px, 6.2vw, 82px); line-height: 1.03; }
 .hero-bottom { position: absolute; right: 0; bottom: 20px; left: 0; display: flex; justify-content: center; align-items: center; gap: 13px; color: #929287; font-size: 9px; text-transform: uppercase; letter-spacing: 1.3px; }
 .hero-bottom span:nth-child(2) { color: var(--coral); font-size: 16px; }
 
+.playground-scene { height: clamp(120px, 15vw, 190px); overflow: hidden; background: #eaf6fb; pointer-events: none; user-select: none; }
+.playground-art { display: block; width: 100%; height: 100%; }
+.scene-sky { fill: #eaf6fb; }
+.scene-cloud { transform-box: fill-box; transform-origin: center; animation: cloud-drift 34s ease-in-out infinite alternate; }
+.scene-cloud-two { animation-duration: 42s; animation-delay: -17s; }
+.scene-rabbit { transform-box: fill-box; transform-origin: center bottom; animation: rabbit-hop 5.8s ease-in-out infinite; }
+.scene-butterfly { transform-box: fill-box; transform-origin: center; }
+.scene-butterfly-one { animation: butterfly-glide 9s ease-in-out infinite; }
+.scene-butterfly-two { animation: butterfly-glide 12s ease-in-out -5s infinite; }
+.scene-bird { transform-box: fill-box; transform-origin: center; animation: bird-bob 4.6s ease-in-out infinite; }
+
 .joy-section { position: relative; display: grid; grid-template-columns: .8fr 1.2fr; gap: 9%; align-items: center; padding-top: 112px; padding-bottom: 125px; }
 .section-heading h2, .play-intro h2 { margin: 0; font-size: clamp(43px, 4.5vw, 59px); line-height: 1.11; }
 .section-heading > p:last-child { max-width: 320px; margin: 20px 0 0; color: var(--muted); font-size: 13px; line-height: 1.9; }
@@ -311,6 +322,10 @@ h1 { margin: 0; font-size: clamp(55px, 6.2vw, 82px); line-height: 1.03; }
 @keyframes game-arrive { from { opacity: .6; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes bubble-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
 @keyframes flower-wiggle { 0%, 90%, 100% { rotate: 0deg; } 94% { rotate: -12deg; } 98% { rotate: 10deg; } }
+@keyframes cloud-drift { from { translate: -8px 0; } to { translate: 12px 2px; } }
+@keyframes rabbit-hop { 0%, 82%, 100% { translate: 0 0; } 88% { translate: 0 -12px; } 94% { translate: 0 0; } }
+@keyframes butterfly-glide { 0%, 100% { translate: 0 0; rotate: -5deg; } 25% { translate: 9px -8px; rotate: 8deg; } 50% { translate: 17px -2px; rotate: -3deg; } 75% { translate: 8px -11px; rotate: 7deg; } }
+@keyframes bird-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -4px; } }
 
 @media (min-width: 1400px) { .hero { min-height: 680px; } }
 @media (max-width: 800px) {
@@ -331,6 +346,11 @@ h1 { margin: 0; font-size: clamp(55px, 6.2vw, 82px); line-height: 1.03; }
   .sun-rays, .sun-face, .art-flower, .star-three, .closing-flower { animation: none; }
   .star-one, .star-two { animation-duration: 6s; }
   .bubble-field.is-active .bubble { animation: bubble-in .4s both; }
+  .playground-scene { height: 112px; }
+  .scene-cloud-two, .scene-bird, .scene-butterfly-two { display: none; }
+  .scene-cloud-one { animation-duration: 48s; }
+  .scene-butterfly-one { animation-duration: 14s; }
+  .scene-rabbit { animation-duration: 7.5s; }
   .site-header { min-height: 65px; padding: 8px 5%; gap: 8px; }
   .site-header nav { order: 3; width: 100%; justify-content: center; }
   .brand { font-size: 15px; }
@@ -403,5 +423,5 @@ h1 { margin: 0; font-size: clamp(55px, 6.2vw, 82px); line-height: 1.03; }
   .memory-grid { gap: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
 }
