@@ -10,30 +10,34 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to the fun</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to the fun</a>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Little Joy Lab home">
+      <a class="brand" href="#top" aria-label="Little Joy Lab home" data-i18n-aria="brand.home">
         <span class="brand-mark" aria-hidden="true">✳</span>
-        <span>little joy <strong>lab</strong></span>
+        <span data-i18n="brand.name">little joy <strong>lab</strong></span>
       </a>
-      <nav aria-label="Main navigation">
-        <a href="#joy" aria-label="Get a tiny joy prompt">Joy</a>
-        <a href="#mood-games" aria-label="Games by mood">Moods</a>
-        <a href="#play" aria-label="Bubble game">Bubbles</a>
+      <nav aria-label="Main navigation" data-i18n-aria="nav.label">
+        <a href="#joy" aria-label="Get a tiny joy prompt" data-i18n="nav.joy" data-i18n-aria="nav.joy.aria">Joy</a>
+        <a href="#mood-games" aria-label="Games by mood" data-i18n="nav.moods" data-i18n-aria="nav.moods.aria">Moods</a>
+        <a href="#play" aria-label="Bubble game" data-i18n="nav.bubbles" data-i18n-aria="nav.bubbles.aria">Bubbles</a>
       </nav>
-      <a class="header-note" href="#joy"><span aria-hidden="true">✦</span> Your tiny break starts here</a>
+      <a class="header-note" href="#joy"><span aria-hidden="true">✦</span> <span data-i18n="header.note">Your tiny break starts here</span></a>
+      <div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria="language.label">
+        <button type="button" class="language-option is-selected" data-language="en" aria-pressed="true" aria-label="English" data-i18n-aria="language.english">EN</button>
+        <button type="button" class="language-option" data-language="ja" aria-pressed="false" aria-label="Japanese" data-i18n-aria="language.japanese">日本語</button>
+      </div>
     </header>
 
     <main id="main">
       <section class="hero section-wrap" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> A little corner of happy</p>
-          <h1 id="hero-title">A little fun,<br>just <span>because.</span></h1>
-          <p class="hero-description">No big plans. No perfect mood required. Just tiny, lovely things to make this moment a little brighter.</p>
-          <a class="button button-primary" href="#joy">Find a little joy <span aria-hidden="true">↘</span></a>
-          <p class="gentle-note"><span aria-hidden="true">♡</span> Take what you need. Stay as long as you like.</p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="hero.eyebrow">A little corner of happy</span></p>
+          <h1 id="hero-title"><span data-i18n="hero.title">A little fun,<br>just <em>because.</em></span></h1>
+          <p class="hero-description" data-i18n="hero.description">No big plans. No perfect mood required. Just tiny, lovely things to make this moment a little brighter.</p>
+          <a class="button button-primary" href="#joy"><span data-i18n="hero.cta">Find a little joy</span> <span aria-hidden="true">↘</span></a>
+          <p class="gentle-note"><span aria-hidden="true">♡</span> <span data-i18n="hero.note">Take what you need. Stay as long as you like.</span></p>
         </div>
-        <div class="hero-art" aria-label="Illustration of a happy sun surrounded by stars and flowers">
+        <div class="hero-art" aria-label="Illustration of a happy sun surrounded by stars and flowers" data-i18n-aria="hero.art">
           <div class="sun-rays" aria-hidden="true"></div>
           <div class="sun-face" aria-hidden="true"><span class="sun-eye"></span><span class="sun-eye"></span><span class="sun-smile"></span></div>
           <span class="art-star star-one" aria-hidden="true">✦</span>
@@ -41,107 +45,107 @@
           <span class="art-star star-three" aria-hidden="true">✦</span>
           <span class="art-flower flower-one" aria-hidden="true">✿</span>
           <span class="art-flower flower-two" aria-hidden="true">✿</span>
-          <span class="art-caption">a good day<br>to be here</span>
+          <span class="art-caption" data-i18n="hero.caption">a good day<br>to be here</span>
         </div>
-        <div class="hero-bottom" aria-hidden="true"><span>small joys count, too</span><span>↓</span><span>scroll a little</span></div>
+        <div class="hero-bottom" aria-hidden="true"><span data-i18n="hero.bottom.one">small joys count, too</span><span>↓</span><span data-i18n="hero.bottom.two">scroll a little</span></div>
       </section>
 
       <section class="joy-section section-wrap" id="joy" aria-labelledby="joy-title">
         <div class="section-heading">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> The tiny joy generator</p>
-          <h2 id="joy-title">A little prompt.<br><span>A little lift.</span></h2>
-          <p>Consider this your permission slip to pause, play, and do one small thing just for you.</p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="joy.eyebrow">The tiny joy generator</span></p>
+          <h2 id="joy-title" data-i18n="joy.title">A little prompt.<br><span>A little lift.</span></h2>
+          <p data-i18n="joy.description">Consider this your permission slip to pause, play, and do one small thing just for you.</p>
         </div>
         <div class="joy-card">
-          <div class="card-topline"><span class="card-label"><span aria-hidden="true">✳</span> YOUR MOMENT OF JOY</span><span class="card-counter" id="prompt-count">A fresh little idea</span></div>
+          <div class="card-topline"><span class="card-label"><span aria-hidden="true">✳</span> <span data-i18n="joy.card.label">YOUR MOMENT OF JOY</span></span><span class="card-counter" id="prompt-count">A fresh little idea</span></div>
           <div class="prompt-stage" aria-live="polite" aria-atomic="true">
             <span class="prompt-spark" aria-hidden="true">✧</span>
-            <p id="joy-prompt">Tap the button and see what your day has in store.</p>
+            <p id="joy-prompt" data-i18n="joy.initial">Tap the button and see what your day has in store.</p>
             <span class="prompt-spark prompt-spark-bottom" aria-hidden="true">✦</span>
           </div>
           <div class="card-actions">
-            <button class="button button-primary" id="generate-button" type="button"><span aria-hidden="true">✦</span> Give me a tiny joy</button>
-            <p class="card-footnote"><span aria-hidden="true">☼</span> No wrong way to do it.</p>
+            <button class="button button-primary" id="generate-button" type="button"><span aria-hidden="true">✦</span> <span data-i18n="joy.button">Give me a tiny joy</span></button>
+            <p class="card-footnote"><span aria-hidden="true">☼</span> <span data-i18n="joy.footnote">No wrong way to do it.</span></p>
           </div>
         </div>
-        <div class="joy-aside" aria-hidden="true"><span class="aside-doodle">〰</span> made for your<br>right now</div>
+        <div class="joy-aside" aria-hidden="true"><span class="aside-doodle">〰</span> <span data-i18n="joy.aside">made for your<br>right now</span></div>
       </section>
 
       <section class="mood-games-section" id="mood-games" aria-labelledby="mood-games-title">
         <div class="section-wrap">
           <div class="mood-games-heading">
-            <p class="eyebrow"><span class="eyebrow-dot"></span> A game for this moment</p>
-            <h2 id="mood-games-title">Meet yourself<br><span>where you are.</span></h2>
-            <p>No mood needs fixing. Pick what sounds good, or just browse. These little games are here for company, curiosity, or a change of pace.</p>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="games.eyebrow">A game for this moment</span></p>
+            <h2 id="mood-games-title" data-i18n="games.title">Meet yourself<br><span>where you are.</span></h2>
+            <p data-i18n="games.description">No mood needs fixing. Pick what sounds good, or just browse. These little games are here for company, curiosity, or a change of pace.</p>
           </div>
-          <div class="mood-picker" role="group" aria-label="Filter games by how you feel">
-            <span class="mood-picker-label">What sounds right?</span>
-            <button type="button" class="mood-filter is-selected" data-mood="all" aria-pressed="true">Show me everything</button>
-            <button type="button" class="mood-filter" data-mood="calm" aria-pressed="false">Calm</button>
-            <button type="button" class="mood-filter" data-mood="low" aria-pressed="false">Low energy</button>
-            <button type="button" class="mood-filter" data-mood="playful" aria-pressed="false">Playful</button>
-            <button type="button" class="mood-filter" data-mood="focused" aria-pressed="false">Focused</button>
-            <button type="button" class="mood-filter" data-mood="tense" aria-pressed="false">Tense or anxious</button>
-            <button type="button" class="mood-filter" data-mood="tender" aria-pressed="false">A little alone</button>
-            <button type="button" class="mood-filter" data-mood="celebrating" aria-pressed="false">Celebrating</button>
+          <div class="mood-picker" role="group" aria-label="Filter games by how you feel" data-i18n-aria="games.filter.label">
+            <span class="mood-picker-label" data-i18n="games.filter.prompt">What sounds right?</span>
+            <button type="button" class="mood-filter is-selected" data-mood="all" aria-pressed="true" data-i18n="games.mood.all">Show me everything</button>
+            <button type="button" class="mood-filter" data-mood="calm" aria-pressed="false" data-i18n="games.mood.calm">Calm</button>
+            <button type="button" class="mood-filter" data-mood="low" aria-pressed="false" data-i18n="games.mood.low">Low energy</button>
+            <button type="button" class="mood-filter" data-mood="playful" aria-pressed="false" data-i18n="games.mood.playful">Playful</button>
+            <button type="button" class="mood-filter" data-mood="focused" aria-pressed="false" data-i18n="games.mood.focused">Focused</button>
+            <button type="button" class="mood-filter" data-mood="tense" aria-pressed="false" data-i18n="games.mood.tense">Tense or anxious</button>
+            <button type="button" class="mood-filter" data-mood="tender" aria-pressed="false" data-i18n="games.mood.tender">A little alone</button>
+            <button type="button" class="mood-filter" data-mood="celebrating" aria-pressed="false" data-i18n="games.mood.celebrating">Celebrating</button>
           </div>
-          <p class="mood-results" id="mood-results" aria-live="polite">10 small games to explore</p>
+          <p class="mood-results" id="mood-results" aria-live="polite"></p>
           <div class="mini-game-grid" id="mini-game-grid">
             <article class="mini-game-card" data-game-card data-moods="calm tense" style="--game-accent:#d8e8df">
-              <span class="mini-game-icon" aria-hidden="true">◌</span><span class="mini-game-mood">Calm · Tense</span>
-              <h3>Breath Garden</h3><p>Follow a soft expanding circle for five unhurried breaths. Go at your own pace; stopping is always okay.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="breath">Try Breath Garden <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">◌</span>              <span class="mini-game-mood" data-game-moods="breath"></span>
+              <h3 data-game-title="breath">Breath Garden</h3><p data-game-description="breath">Follow a soft expanding circle for five unhurried breaths. Go at your own pace; stopping is always okay.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="breath"><span data-game-launch="breath">Try Breath Garden</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="playful focused tense" style="--game-accent:#fae5d8">
-              <span class="mini-game-icon" aria-hidden="true">●</span><span class="mini-game-mood">Playful · Focused</span>
-              <h3>Color Current</h3><p>Find the color that matches the tide. Five rounds, no timer, and a little room to settle in.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="color">Try Color Current <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">●</span>              <span class="mini-game-mood" data-game-moods="color"></span>
+              <h3 data-game-title="color">Color Current</h3><p data-game-description="color">Find the color that matches the tide. Five rounds, no timer, and a little room to settle in.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="color"><span data-game-launch="color">Try Color Current</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="focused low" style="--game-accent:#ece4f4">
-              <span class="mini-game-icon" aria-hidden="true">▦</span><span class="mini-game-mood">Focused · Low energy</span>
-              <h3>Pocket Pairs</h3><p>Turn over two tiles at a time and find four matching pairs in this quiet memory game.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="memory">Try Pocket Pairs <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">▦</span>              <span class="mini-game-mood" data-game-moods="memory"></span>
+              <h3 data-game-title="memory">Pocket Pairs</h3><p data-game-description="memory">Turn over two tiles at a time and find four matching pairs in this quiet memory game.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="memory"><span data-game-launch="memory">Try Pocket Pairs</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="focused playful" style="--game-accent:#f3e8c9">
-              <span class="mini-game-icon" aria-hidden="true">Aa</span><span class="mini-game-mood">Focused · Playful</span>
-              <h3>Word Tangle</h3><p>Untangle five friendly little words. Type your answer, or use the hint when you want one.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="words">Try Word Tangle <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">Aa</span>              <span class="mini-game-mood" data-game-moods="words"></span>
+              <h3 data-game-title="words">Word Tangle</h3><p data-game-description="words">Untangle five friendly little words. Type your answer, or use the hint when you want one.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="words"><span data-game-launch="words">Try Word Tangle</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="playful focused" style="--game-accent:#dceaf1">
-              <span class="mini-game-icon" aria-hidden="true">♫</span><span class="mini-game-mood">Playful · Focused</span>
-              <h3>Echo Garden</h3><p>Listen with your eyes, then repeat a growing sequence of garden notes. There’s no rush.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="echo">Try Echo Garden <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">♫</span>              <span class="mini-game-mood" data-game-moods="echo"></span>
+              <h3 data-game-title="echo">Echo Garden</h3><p data-game-description="echo">Listen with your eyes, then repeat a growing sequence of garden notes. There’s no rush.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="echo"><span data-game-launch="echo">Try Echo Garden</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="focused low" style="--game-accent:#e7edda">
-              <span class="mini-game-icon" aria-hidden="true">⌁</span><span class="mini-game-mood">Focused · Low energy</span>
-              <h3>Little Maze</h3><p>Guide a tiny star through a pocket-sized maze. Use the arrows, WASD, or the on-screen buttons.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="maze">Try Little Maze <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">⌁</span>              <span class="mini-game-mood" data-game-moods="maze"></span>
+              <h3 data-game-title="maze">Little Maze</h3><p data-game-description="maze">Guide a tiny star through a pocket-sized maze. Use the arrows, WASD, or the on-screen buttons.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="maze"><span data-game-launch="maze">Try Little Maze</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="low tender calm" style="--game-accent:#e6e1f2">
-              <span class="mini-game-icon" aria-hidden="true">☁</span><span class="mini-game-mood">Low energy · A little alone</span>
-              <h3>Cloud Match</h3><p>Pick the cloud that matches the little shape above it. A soft, simple game for a quiet minute.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="cloud">Try Cloud Match <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">☁</span>              <span class="mini-game-mood" data-game-moods="cloud"></span>
+              <h3 data-game-title="cloud">Cloud Match</h3><p data-game-description="cloud">Pick the cloud that matches the little shape above it. A soft, simple game for a quiet minute.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="cloud"><span data-game-launch="cloud">Try Cloud Match</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="tender playful" style="--game-accent:#f5e0e2">
-              <span class="mini-game-icon" aria-hidden="true">✎</span><span class="mini-game-mood">A little alone · Playful</span>
-              <h3>Story Sprout</h3><p>Choose a few words and grow a tiny story. Keep it private, share it, or leave it unfinished.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="story">Try Story Sprout <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">✎</span>              <span class="mini-game-mood" data-game-moods="story"></span>
+              <h3 data-game-title="story">Story Sprout</h3><p data-game-description="story">Choose a few words and grow a tiny story. Keep it private, share it, or leave it unfinished.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="story"><span data-game-launch="story">Try Story Sprout</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="focused tense" style="--game-accent:#f1e4c8">
-              <span class="mini-game-icon" aria-hidden="true">⌕</span><span class="mini-game-mood">Focused · Tense</span>
-              <h3>Find the Odd One</h3><p>Spot the one symbol that’s different from the rest. Five rounds, at whatever speed feels good.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="odd">Try Find the Odd One <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">⌕</span>              <span class="mini-game-mood" data-game-moods="odd"></span>
+              <h3 data-game-title="odd">Find the Odd One</h3><p data-game-description="odd">Spot the one symbol that’s different from the rest. Five rounds, at whatever speed feels good.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="odd"><span data-game-launch="odd">Try Find the Odd One</span> <span aria-hidden="true">↗</span></button>
             </article>
             <article class="mini-game-card" data-game-card data-moods="celebrating focused playful" style="--game-accent:#f6e4a8">
-              <span class="mini-game-icon" aria-hidden="true">✧</span><span class="mini-game-mood">Celebrating · Focused</span>
-              <h3>Pattern Lanterns</h3><p>Work out which lantern completes each little pattern, and light up the path one round at a time.</p>
-              <button class="mini-game-launch" type="button" data-launch-game="pattern">Try Pattern Lanterns <span aria-hidden="true">↗</span></button>
+              <span class="mini-game-icon" aria-hidden="true">✧</span>              <span class="mini-game-mood" data-game-moods="pattern"></span>
+              <h3 data-game-title="pattern">Pattern Lanterns</h3><p data-game-description="pattern">Work out which lantern completes each little pattern, and light up the path one round at a time.</p>
+              <button class="mini-game-launch" type="button" data-launch-game="pattern"><span data-game-launch="pattern">Try Pattern Lanterns</span> <span aria-hidden="true">↗</span></button>
             </article>
           </div>
           <section class="mini-game-stage" id="mini-game-stage" aria-labelledby="active-game-title" hidden>
             <div class="mini-game-stage-top">
-              <div><p class="eyebrow"><span class="eyebrow-dot"></span> Your little game</p><h3 id="active-game-title" tabindex="-1">Game</h3></div>
-              <button class="stage-close" type="button" id="close-mini-game">Back to games <span aria-hidden="true">×</span></button>
+              <div><p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="games.stage.eyebrow">Your little game</span></p><h3 id="active-game-title" tabindex="-1">Game</h3></div>
+              <button class="stage-close" type="button" id="close-mini-game"><span data-i18n="games.stage.close">Back to games</span> <span aria-hidden="true">×</span></button>
             </div>
             <p class="stage-instructions" id="active-game-instructions"></p>
             <div class="active-game" id="active-game" aria-describedby="active-game-instructions"></div>
@@ -153,51 +157,51 @@
       <section class="play-section" id="play" aria-labelledby="play-title">
         <div class="play-inner section-wrap">
           <div class="play-intro">
-            <p class="eyebrow"><span class="eyebrow-dot"></span> A tiny game break</p>
-            <h2 id="play-title">Pop some<br><span>bubbles.</span></h2>
-            <p>A tiny game with absolutely no stakes. Pop as many bubbles as you can before the timer runs out.</p>
-            <div class="game-stats" aria-label="Game status">
-              <div class="stat"><span class="stat-label">SCORE</span><span class="stat-value" id="score" aria-live="polite">00</span></div>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="bubble.eyebrow">A tiny game break</span></p>
+            <h2 id="play-title" data-i18n="bubble.title">Pop some<br><span>bubbles.</span></h2>
+            <p data-i18n="bubble.description">A tiny game with absolutely no stakes. Pop as many bubbles as you can before the timer runs out.</p>
+            <div class="game-stats" aria-label="Game status" data-i18n-aria="bubble.stats">
+              <div class="stat"><span class="stat-label" data-i18n="bubble.score">SCORE</span><span class="stat-value" id="score" aria-live="polite">00</span></div>
               <div class="stat-divider" aria-hidden="true"></div>
-              <div class="stat"><span class="stat-label">TIME</span><span class="stat-value" id="time-left" aria-live="off">30<span class="stat-unit">s</span></span></div>
+              <div class="stat"><span class="stat-label" data-i18n="bubble.time">TIME</span><span class="stat-value" id="time-left" aria-live="off">30<span class="stat-unit" data-i18n="bubble.seconds">s</span></span></div>
             </div>
-            <button class="button button-dark" id="game-toggle" type="button"><span aria-hidden="true">▶</span> Start popping</button>
-            <p class="game-hint" id="game-message" aria-live="polite">Ready when you are. Pick any bubble to pop!</p>
+            <button class="button button-dark" id="game-toggle" type="button"><span aria-hidden="true">▶</span> <span class="button-label" data-i18n="bubble.start">Start popping</span></button>
+            <p class="game-hint" id="game-message" aria-live="polite" data-i18n="bubble.ready">Ready when you are. Pick any bubble to pop!</p>
           </div>
           <div class="game-panel">
-            <div class="game-panel-top"><span><span class="live-dot" aria-hidden="true"></span> BUBBLE PLAYGROUND</span><span id="game-state">ON PAUSE</span></div>
-            <div class="bubble-field" id="bubble-field" aria-label="Bubble popping game">
-              <button class="bubble bubble-pink" type="button" aria-label="Bubble 1" disabled><span></span></button>
-              <button class="bubble bubble-yellow" type="button" aria-label="Bubble 2" disabled><span></span></button>
-              <button class="bubble bubble-blue" type="button" aria-label="Bubble 3" disabled><span></span></button>
-              <button class="bubble bubble-purple" type="button" aria-label="Bubble 4" disabled><span></span></button>
-              <button class="bubble bubble-green" type="button" aria-label="Bubble 5" disabled><span></span></button>
-              <button class="bubble bubble-orange" type="button" aria-label="Bubble 6" disabled><span></span></button>
-              <button class="bubble bubble-blue" type="button" aria-label="Bubble 7" disabled><span></span></button>
-              <button class="bubble bubble-pink" type="button" aria-label="Bubble 8" disabled><span></span></button>
-              <button class="bubble bubble-yellow" type="button" aria-label="Bubble 9" disabled><span></span></button>
-              <button class="bubble bubble-green" type="button" aria-label="Bubble 10" disabled><span></span></button>
-              <button class="bubble bubble-orange" type="button" aria-label="Bubble 11" disabled><span></span></button>
-              <button class="bubble bubble-purple" type="button" aria-label="Bubble 12" disabled><span></span></button>
-              <div class="game-overlay" id="game-overlay"><span class="overlay-icon" aria-hidden="true">✿</span><span>Ready for a little play?</span></div>
+            <div class="game-panel-top"><span><span class="live-dot" aria-hidden="true"></span> <span data-i18n="bubble.panel">BUBBLE PLAYGROUND</span></span><span id="game-state" data-i18n="bubble.paused">ON PAUSE</span></div>
+            <div class="bubble-field" id="bubble-field" aria-label="Bubble popping game" data-i18n-aria="bubble.field">
+              <button class="bubble bubble-pink" type="button" aria-label="Bubble 1" data-i18n-aria="bubble.bubble" data-bubble-number="1" disabled><span></span></button>
+              <button class="bubble bubble-yellow" type="button" aria-label="Bubble 2" data-i18n-aria="bubble.bubble" data-bubble-number="2" disabled><span></span></button>
+              <button class="bubble bubble-blue" type="button" aria-label="Bubble 3" data-i18n-aria="bubble.bubble" data-bubble-number="3" disabled><span></span></button>
+              <button class="bubble bubble-purple" type="button" aria-label="Bubble 4" data-i18n-aria="bubble.bubble" data-bubble-number="4" disabled><span></span></button>
+              <button class="bubble bubble-green" type="button" aria-label="Bubble 5" data-i18n-aria="bubble.bubble" data-bubble-number="5" disabled><span></span></button>
+              <button class="bubble bubble-orange" type="button" aria-label="Bubble 6" data-i18n-aria="bubble.bubble" data-bubble-number="6" disabled><span></span></button>
+              <button class="bubble bubble-blue" type="button" aria-label="Bubble 7" data-i18n-aria="bubble.bubble" data-bubble-number="7" disabled><span></span></button>
+              <button class="bubble bubble-pink" type="button" aria-label="Bubble 8" data-i18n-aria="bubble.bubble" data-bubble-number="8" disabled><span></span></button>
+              <button class="bubble bubble-yellow" type="button" aria-label="Bubble 9" data-i18n-aria="bubble.bubble" data-bubble-number="9" disabled><span></span></button>
+              <button class="bubble bubble-green" type="button" aria-label="Bubble 10" data-i18n-aria="bubble.bubble" data-bubble-number="10" disabled><span></span></button>
+              <button class="bubble bubble-orange" type="button" aria-label="Bubble 11" data-i18n-aria="bubble.bubble" data-bubble-number="11" disabled><span></span></button>
+              <button class="bubble bubble-purple" type="button" aria-label="Bubble 12" data-i18n-aria="bubble.bubble" data-bubble-number="12" disabled><span></span></button>
+              <div class="game-overlay" id="game-overlay"><span class="overlay-icon" aria-hidden="true">✿</span><span data-i18n="bubble.overlay.ready">Ready for a little play?</span></div>
               <div class="pop-feedback" id="pop-feedback" aria-hidden="true">+1</div>
             </div>
-            <div class="game-panel-bottom"><span>CLICK OR TAP TO POP</span><span aria-hidden="true">✦ &nbsp; ✦ &nbsp; ✦</span></div>
+            <div class="game-panel-bottom"><span data-i18n="bubble.instruction">CLICK OR TAP TO POP</span><span aria-hidden="true">✦ &nbsp; ✦ &nbsp; ✦</span></div>
           </div>
         </div>
       </section>
 
-      <section class="closing section-wrap" aria-label="A little reminder">
+      <section class="closing section-wrap" aria-label="A little reminder" data-i18n-aria="closing.label">
         <span class="closing-flower" aria-hidden="true">✿</span>
-        <p>Whatever your day looks like,<br><span>you deserve a little joy in it.</span></p>
-        <a href="#top" aria-label="Back to top">Back to the sunshine <span aria-hidden="true">↑</span></a>
+        <p data-i18n="closing.message">Whatever your day looks like,<br><span>you deserve a little joy in it.</span></p>
+        <a href="#top" aria-label="Back to top" data-i18n-aria="closing.top"><span data-i18n="closing.top">Back to the sunshine</span> <span aria-hidden="true">↑</span></a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">✳</span><span>little joy <strong>lab</strong></span></a>
-      <p>A small reminder that the little things are lovely.</p>
-      <span class="footer-heart">made with <span aria-label="love">♥</span> for you</span>
+      <a class="brand footer-brand" href="#top" aria-label="Little Joy Lab home" data-i18n-aria="brand.home"><span class="brand-mark" aria-hidden="true">✳</span><span data-i18n="brand.name">little joy <strong>lab</strong></span></a>
+      <p data-i18n="footer.note">A small reminder that the little things are lovely.</p>
+      <span class="footer-heart" data-i18n="footer.heart">made with <span aria-label="love">♥</span> for you</span>
     </footer>
   </body>
 </html>
